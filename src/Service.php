@@ -28,19 +28,22 @@ class Service
     }
 
 
-    public function handleRequest($data)
+    public function create(array $data)
     {
         $entity = new Entity($data['name']);
 
-        // some logic
+        if($this->validator->isValid($entity)){
+            $id = $this->repository->save($entity);
 
-        $this->repository->save($entity);
+            return $this->repository->getById($id);
+        }
+
     }
 
     /**
      * @param array $data
      */
-    public function handleMultiple(array $data)
+    public function createMultiple(array $data)
     {
         $this->repository->startTransaction();
         foreach($data as $singleRow){

@@ -8,10 +8,10 @@ class Repository
 {
     public function save(Entity $entity)
     {
-        // dave to db
+        return 1;
     }
 
-    public function getById($id)
+    public function getById(int $id) : Entity
     {
 
     }

@@ -188,7 +188,7 @@ class ServiceTest extends TestCase
             ['name' => 'invalid_name'],
             ['name' => 'some_valid_name_2'],
         ];
-        $sut->handleMultiple($data);
+        $sut->createMultiple($data);
 
         $repositoryMock->save(new TypeToken(Entity::class))->should(new CallTimesPrediction(2));
 
