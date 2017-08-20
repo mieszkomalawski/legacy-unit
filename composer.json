@@ -9,6 +9,13 @@
         "phpunit/phpunit": "^6.3",
         "php-mock/php-mock": "^2.0",
         "php-mock/php-mock-phpunit": "^2.0",
-        "mockery/mockery": "^0.9.9"
+        "mockery/mockery": "^0.9.9",
+        "antecedent/patchwork": "^2.0",
+        "atoum/atoum": "^3.1",
+        "atoum/stubs": "^2.5",
+        "phpspec/phpspec": "^4.0"
+    },
+    "require": {
+        "kahlan/kahlan": "^3.1"
     }
 }
