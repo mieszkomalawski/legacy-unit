@@ -18,9 +18,9 @@ class ServiceTest extends TestCase
     /**
      * @test
      */
-    /*public function shouldSaveMultiple()
+    public function shouldSaveMultiple()
     {
-        $repositoryMock = $this->getMockBuilder(Repository::class)->getMock();
+        $repositoryMock = $this->getMockBuilder(Repository::class)->disableOriginalConstructor()->getMock();
 
         $validatorMock = $this->getMockBuilder(Validator::class)->getMock();
 
@@ -42,8 +42,8 @@ class ServiceTest extends TestCase
         $repositoryMock->expects(static::at(0))->method('save')->with(new Entity('some_valid_name'));
         $repositoryMock->expects(static::at(1))->method('save')->with(new Entity('some_valid_name_2'));
 
-        $sut->handleMultiple($data);
-    }*/
+        $sut->createMultiple($data);
+    }
 
     /**
      * @test
@@ -166,31 +166,31 @@ class ServiceTest extends TestCase
     /**
      * @test
      */
-    public function shouldSaveMultiple()
-    {
-        /** @var Repository $repositoryMock */
-        $repositoryMock = $this->prophesize(Repository::class);
-
-        /** @var Validator $validatorMock */
-        $validatorMock = $this->prophesize(Validator::class);
-
-        $validatorMock->isValid(Argument::which('getName', 'some_valid_name'))->willReturn(true);
-        $validatorMock->isValid(new Entity('invalid_name'))->willReturn(false);
-        $validatorMock->isValid(new Entity('some_valid_name_2'))->willReturn(true);
-
-        $sut = new Service(
-            $repositoryMock->reveal(),
-            $validatorMock->reveal()
-        );
-
-        $data = [
-            ['name' => 'some_valid_name'],
-            ['name' => 'invalid_name'],
-            ['name' => 'some_valid_name_2'],
-        ];
-        $sut->createMultiple($data);
-
-        $repositoryMock->save(new TypeToken(Entity::class))->should(new CallTimesPrediction(2));
-
-    }
+//    public function shouldSaveMultiple()
+//    {
+//        /** @var Repository $repositoryMock */
+//        $repositoryMock = $this->prophesize(Repository::class);
+//
+//        /** @var Validator $validatorMock */
+//        $validatorMock = $this->prophesize(Validator::class);
+//
+//        $validatorMock->isValid(Argument::which('getName', 'some_valid_name'))->willReturn(true);
+//        $validatorMock->isValid(new Entity('invalid_name'))->willReturn(false);
+//        $validatorMock->isValid(new Entity('some_valid_name_2'))->willReturn(true);
+//
+//        $sut = new Service(
+//            $repositoryMock->reveal(),
+//            $validatorMock->reveal()
+//        );
+//
+//        $data = [
+//            ['name' => 'some_valid_name'],
+//            ['name' => 'invalid_name'],
+//            ['name' => 'some_valid_name_2'],
+//        ];
+//        $sut->createMultiple($data);
+//
+//        $repositoryMock->save(new TypeToken(Entity::class))->should(new CallTimesPrediction(2));
+//
+//    }
 }

@@ -45,13 +45,13 @@ class Service
      */
     public function createMultiple(array $data)
     {
-        $this->repository->startTransaction();
+        //$this->repository->startTransaction();
         foreach($data as $singleRow){
             $entity = new Entity($singleRow['name']);
             if(true === $this->validator->isValid($entity)){
                 $this->repository->save($entity);
             }
         }
-        $this->repository->commit();
+        //$this->repository->commit();
     }
 }
