@@ -48,45 +48,9 @@ class ServiceTest extends TestCase
     /**
      * @test
      */
-    public function shouldSaveMultiple()
-    {
-        $repositoryMock = $this->getMockBuilder(Repository::class)->disableOriginalConstructor()->getMock();
-
-        $validatorMock = $this->getMockBuilder(Validator::class)->getMock();
-
-        /**
-         * nie zadziałą bo pod spodem jest porównanie === a to jest osobna instancja obiektu
-         */
-        $map = [
-            [new Entity('some_valid_name'), true],
-            [new Entity('invalid_name'), false],
-            [new Entity('some_valid_name_2'), true],
-        ];
-        $validatorMock->method('isValid')->will($this->returnValueMap($map));
-
-        $data = [
-            ['name' => 'some_valid_name'],
-            ['name' => 'invalid_name'],
-            ['name' => 'some_valid_name_2'],
-        ];
-
-        $sut = new Service(
-            $repositoryMock,
-            $validatorMock
-        );
-
-        $repositoryMock->expects(static::at(0))->method('save')->with(new Entity('some_valid_name'));
-        $repositoryMock->expects(static::at(1))->method('save')->with(new Entity('some_valid_name_2'));
-
-        $sut->createMultiple($data);
-    }
-
-//    /**
-//     * @test
-//     */
 //    public function shouldSaveMultiple()
 //    {
-//        $repositoryMock = $this->getMockBuilder(Repository::class)->getMock();
+//        $repositoryMock = $this->getMockBuilder(Repository::class)->disableOriginalConstructor()->getMock();
 //
 //        $validatorMock = $this->getMockBuilder(Validator::class)->getMock();
 //
@@ -98,21 +62,7 @@ class ServiceTest extends TestCase
 //            [new Entity('invalid_name'), false],
 //            [new Entity('some_valid_name_2'), true],
 //        ];
-//        $validatorMock->method('isValid')->willReturnCallback(function(){
-//            $args = func_get_args();
-//            /** @var Entity $entity */
-//            $entity = $args[0];
-//
-//            if($entity->getName() == 'some_valid_name'){
-//                return true;
-//            }
-//            if($entity->getName() == 'invalid_name'){
-//                return false;
-//            }
-//            if($entity->getName() == 'some_valid_name_2'){
-//                return true;
-//            }
-//        });
+//        $validatorMock->method('isValid')->will($this->returnValueMap($map));
 //
 //        $data = [
 //            ['name' => 'some_valid_name'],
@@ -125,11 +75,53 @@ class ServiceTest extends TestCase
 //            $validatorMock
 //        );
 //
-//        $repositoryMock->expects(static::at(1))->method('save')->with(new Entity('some_valid_name'));
-//        $repositoryMock->expects(static::at(2))->method('save')->with(new Entity('some_valid_name_2'));
+//        $repositoryMock->expects(static::at(0))->method('save')->with(new Entity('some_valid_name'));
+//        $repositoryMock->expects(static::at(1))->method('save')->with(new Entity('some_valid_name_2'));
 //
-//        $sut->handleMultiple($data);
+//        $sut->createMultiple($data);
 //    }
+
+    /**
+     * @test
+     */
+    public function shouldSaveMultiple()
+    {
+        $repositoryMock = $this->getMockBuilder(Repository::class)->disableOriginalConstructor()->getMock();
+
+        $validatorMock = $this->getMockBuilder(Validator::class)->getMock();
+
+        $validatorMock->method('isValid')->willReturnCallback(function(){
+            $args = func_get_args();
+            /** @var Entity $entity */
+            $entity = $args[0];
+
+            if($entity->getName() == 'some_valid_name'){
+                return true;
+            }
+            if($entity->getName() == 'invalid_name'){
+                return false;
+            }
+            if($entity->getName() == 'some_valid_name_2'){
+                return true;
+            }
+        });
+
+        $data = [
+            ['name' => 'some_valid_name'],
+            ['name' => 'invalid_name'],
+            ['name' => 'some_valid_name_2'],
+        ];
+
+        $sut = new Service(
+            $repositoryMock,
+            $validatorMock
+        );
+
+        $repositoryMock->expects(static::at(1))->method('save')->with(new Entity('some_valid_name'));
+        $repositoryMock->expects(static::at(2))->method('save')->with(new Entity('some_valid_name_2'));
+
+        $sut->createMultiple($data);
+    }
 
 //    /**
 //     * @test
