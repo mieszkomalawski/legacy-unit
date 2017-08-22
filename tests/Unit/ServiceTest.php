@@ -18,15 +18,51 @@ class ServiceTest extends TestCase
     /**
      * @test
      */
+//    public function shouldSaveMultiple()
+//    {
+//        $repositoryMock = $this->getMockBuilder(Repository::class)->disableOriginalConstructor()->getMock();
+//
+//        $validatorMock = $this->getMockBuilder(Validator::class)->getMock();
+//
+//        $validatorMock->expects(static::at(0))->method('isValid')->with(new Entity('some_valid_name'))->willReturn(true);
+//        $validatorMock->expects(static::at(1))->method('isValid')->with(new Entity('invalid_name'))->willReturn(false);
+//        $validatorMock->expects(static::at(2))->method('isValid')->with(new Entity('some_valid_name_2'))->willReturn(true);
+//
+//        $data = [
+//            ['name' => 'some_valid_name'],
+//            ['name' => 'invalid_name'],
+//            ['name' => 'some_valid_name_2'],
+//        ];
+//
+//        $sut = new Service(
+//            $repositoryMock,
+//            $validatorMock
+//        );
+//
+//        $repositoryMock->expects(static::at(0))->method('save')->with(new Entity('some_valid_name'));
+//        $repositoryMock->expects(static::at(1))->method('save')->with(new Entity('some_valid_name_2'));
+//
+//        $sut->createMultiple($data);
+//    }
+
+    /**
+     * @test
+     */
     public function shouldSaveMultiple()
     {
         $repositoryMock = $this->getMockBuilder(Repository::class)->disableOriginalConstructor()->getMock();
 
         $validatorMock = $this->getMockBuilder(Validator::class)->getMock();
 
-        $validatorMock->expects(static::at(0))->method('isValid')->with(new Entity('some_valid_name'))->willReturn(true);
-        $validatorMock->expects(static::at(1))->method('isValid')->with(new Entity('invalid_name'))->willReturn(false);
-        $validatorMock->expects(static::at(2))->method('isValid')->with(new Entity('some_valid_name_2'))->willReturn(true);
+        /**
+         * nie zadziałą bo pod spodem jest porównanie === a to jest osobna instancja obiektu
+         */
+        $map = [
+            [new Entity('some_valid_name'), true],
+            [new Entity('invalid_name'), false],
+            [new Entity('some_valid_name_2'), true],
+        ];
+        $validatorMock->method('isValid')->will($this->returnValueMap($map));
 
         $data = [
             ['name' => 'some_valid_name'],
@@ -44,42 +80,6 @@ class ServiceTest extends TestCase
 
         $sut->createMultiple($data);
     }
-
-    /**
-     * @test
-     */
-//    public function shouldSaveMultiple()
-//    {
-//        $repositoryMock = $this->getMockBuilder(Repository::class)->getMock();
-//
-//        $validatorMock = $this->getMockBuilder(Validator::class)->getMock();
-//
-//        /**
-//         * nie zadziałą bo pod spodem jest porównanie === a to jest osobna instancja obiektu
-//         */
-//        $map = [
-//            [new Entity('some_valid_name'), true],
-//            [new Entity('invalid_name'), false],
-//            [new Entity('some_valid_name_2'), true],
-//        ];
-//        $validatorMock->method('isValid')->will($this->returnValueMap($map));
-//
-//        $data = [
-//            ['name' => 'some_valid_name'],
-//            ['name' => 'invalid_name'],
-//            ['name' => 'some_valid_name_2'],
-//        ];
-//
-//        $sut = new Service(
-//            $repositoryMock,
-//            $validatorMock
-//        );
-//
-//        $repositoryMock->expects(static::at(0))->method('save')->with(new Entity('some_valid_name'));
-//        $repositoryMock->expects(static::at(1))->method('save')->with(new Entity('some_valid_name_2'));
-//
-//        $sut->handleMultiple($data);
-//    }
 
 //    /**
 //     * @test
