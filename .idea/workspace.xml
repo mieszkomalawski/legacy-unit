@@ -2,29 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d472479-cc1c-4bf6-9edd-35cd0351e37d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spec/Service.spec.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Service.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Validator.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/Unit/CreateTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tests/Unit/ServiceTest.php" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DumbProfiler.php" afterPath="$PROJECT_DIR$/src/Profiler.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tests/Unit/DumbProfilerTest.php" afterPath="$PROJECT_DIR$/tests/Unit/ProfilerTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/php-test-framework.xml" afterPath="$PROJECT_DIR$/.idea/php-test-framework.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/php.xml" afterPath="$PROJECT_DIR$/.idea/php.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/Legacy.spec.php" afterPath="$PROJECT_DIR$/spec/Legacy.spec.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/StaticExample.spec.php" afterPath="$PROJECT_DIR$/spec/StaticExample.spec.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DB.php" afterPath="$PROJECT_DIR$/src/DB.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity.php" afterPath="$PROJECT_DIR$/src/Entity.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LegacyClass.php" afterPath="$PROJECT_DIR$/src/LegacyClass.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Repository.php" afterPath="$PROJECT_DIR$/src/Repository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/StaticExample.php" afterPath="$PROJECT_DIR$/src/StaticExample.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/Unit/LegacyClassTest.php" afterPath="$PROJECT_DIR$/tests/Unit/LegacyClassTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/Unit/StaticExampleTest.php" afterPath="$PROJECT_DIR$/tests/Unit/StaticExampleTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/units/Service.php" afterPath="$PROJECT_DIR$/tests/units/Service.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -467,7 +445,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
