@@ -1,7 +1,7 @@
 <?php
 
 
-namespace PHPUnitAlt;
+namespace TestingLegacy;
 
 
 class Repository
@@ -17,25 +17,26 @@ class Repository
 
     public function save(Entity $entity)
     {
-        return 1;
+        throw new \Exception('Could not connect to database');
     }
 
-    public function getById(int $id) : Entity
+    public function getById(int $id): Entity
     {
-
+        throw new \Exception('Could not connect to database');
     }
 
     public function startTransaction()
     {
-        
+        throw new \Exception('Could not connect to database');
     }
 
-    public function getAll() : array
+    public function getAll(): array
     {
-        return [];
+        throw new \Exception('Could not connect to database');
     }
 
-    public function commit(){
-
+    public function commit()
+    {
+        throw new \Exception('Could not connect to database');
     }
 }

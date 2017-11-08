@@ -1,7 +1,7 @@
 <?php
 
 
-namespace PHPUnitAlt;
+namespace TestingLegacy;
 
 
 class StaticExample
@@ -13,7 +13,7 @@ class StaticExample
     {
         $entities = DB::getAll();
 
-        // do some logic
+        // do some logic that we need to test
 
         //
         return count($entities);

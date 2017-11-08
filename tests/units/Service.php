@@ -1,20 +1,19 @@
 <?php
 
-namespace PHPUnitAlt\Tests\units;
+namespace TestingLegacy\Tests\units;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
 
 
 use atoum;
-use PHPUnitAlt\Validator;
+use TestingLegacy\Validator;
 
 class Service extends atoum
 {
     public function testSay()
     {
-        //$this->string('dupa')->isEqualTo('dupa');
 
-        $validatorMock = new \mock\PHPUnitAlt\Validator();
-        $repositoryMock = new \mock\PHPUnitAlt\Repository();
+        $validatorMock = new \mock\TestingLegacy\Validator();
+        $repositoryMock = new \mock\TestingLegacy\Repository();
     }
 }

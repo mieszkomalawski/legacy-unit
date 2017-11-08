@@ -2,12 +2,12 @@
 
 describe('static class', function(){
     it('should count entities', function(){
-        allow(\PHPUnitAlt\DB::class)->toReceive('::getAll')->andReturn([
-            new \PHPUnitAlt\Entity('a'),
-            new \PHPUnitAlt\Entity('b')
+        allow(\TestingLegacy\DB::class)->toReceive('::getAll')->andReturn([
+            new \TestingLegacy\Entity('a'),
+            new \TestingLegacy\Entity('b')
         ]);
 
-        $sut = new \PHPUnitAlt\StaticExample();
+        $sut = new \TestingLegacy\StaticExample();
 
         expect($sut->foo())->toBe(2);
     });

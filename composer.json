@@ -1,8 +1,8 @@
 {
     "autoload": {
         "psr-4": {
-            "PHPUnitAlt\\": "src/",
-            "PHPUnitAlt\\Tests\\": "tests/"
+            "TestingLegacy\\": "src/",
+            "TestingLegacy\\Tests\\": "tests/"
         }
     },
     "require-dev": {

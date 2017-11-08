@@ -9,7 +9,7 @@ describe('Legacy class', function () {
 
             Quit::disable();
 
-            $sut = new \PHPUnitAlt\LegacyClass();
+            $sut = new \TestingLegacy\LegacyClass();
 
             $closure = function () use ($sut) {
                 $sut->process([]);
@@ -21,10 +21,10 @@ describe('Legacy class', function () {
 
         it('should echo error when no entities found', function () {
 
-            $repositoryMock = \Kahlan\Plugin\Double::instance(['class' => \PHPUnitAlt\Repository::class]);
+            $repositoryMock = \Kahlan\Plugin\Double::instance(['class' => \TestingLegacy\Repository::class]);
             allow($repositoryMock)->toReceive('getAll')->andReturn([]);
-            allow(\PHPUnitAlt\Repository::class)->toBe($repositoryMock);
-            $sut = new \PHPUnitAlt\LegacyClass();
+            allow(\TestingLegacy\Repository::class)->toBe($repositoryMock);
+            $sut = new \TestingLegacy\LegacyClass();
 
             $closure = function () use ($sut) {
                 $sut->process(['same_data']);

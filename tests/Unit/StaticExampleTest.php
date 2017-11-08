@@ -1,11 +1,11 @@
 <?php
 
 
-namespace PHPUnitAlt\Tests;
+namespace TestingLegacy\Tests;
 
 use PHPUnit\Framework\TestCase;
-use PHPUnitAlt\Entity;
-use PHPUnitAlt\StaticExample;
+use TestingLegacy\Entity;
+use TestingLegacy\StaticExample;
 
 class StaticExampleTest extends TestCase
 {
@@ -14,7 +14,7 @@ class StaticExampleTest extends TestCase
      */
     public function shouldReturnEntityCount()
     {
-        $mock = \Mockery::mock('alias:\PHPUnitAlt\DB');
+        $mock = \Mockery::mock('alias:\TestingLegacy\DB');
 
         $mock->shouldReceive('getAll')->andReturn([
             new Entity('a'),

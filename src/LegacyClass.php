@@ -1,7 +1,7 @@
 <?php
 
 
-namespace PHPUnitAlt;
+namespace TestingLegacy;
 
 
 class LegacyClass
@@ -12,15 +12,14 @@ class LegacyClass
      */
     public function process(array $data)
     {
-        if(empty($data)){
+        if (empty($data)) {
             die();
         }
 
         $repository = new Repository();
-        //$repository = $this->getRepository();
 
         $entities = $repository->getAll();
-        if(empty($entities)){
+        if (empty($entities)) {
             echo 'error';
         }
 
@@ -28,11 +27,5 @@ class LegacyClass
         return 1;
     }
 
-    /**
-     * @return Repository
-     */
-    /*protected function getRepository(): Repository
-    {
-        return new Repository();
-    }*/
+
 }

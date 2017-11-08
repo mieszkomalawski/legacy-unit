@@ -1,7 +1,7 @@
 <?php
 
 
-namespace PHPUnitAlt;
+namespace TestingLegacy;
 
 
 class Entity
